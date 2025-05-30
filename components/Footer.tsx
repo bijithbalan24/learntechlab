@@ -60,8 +60,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center text-gray-600 text-sm">
                 <Mail className="w-4 h-4 mr-3 text-blue-600" />
-                <a href="mailto:hello@learntechlab.com" className="hover:text-blue-600 transition-colors">
-                  hello@learntechlab.com
+                <a href="mailto:info@learntechlab.com" className="hover:text-blue-600 transition-colors">
+                  info@learntechlab.com
                 </a>
               </div>
             </div>

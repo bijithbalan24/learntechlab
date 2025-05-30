@@ -66,10 +66,10 @@ export default function ComingSoon({
             <div className="flex items-center justify-center space-x-2 text-blue-600">
               <Mail className="w-4 h-4" />
               <a 
-                href="mailto:hello@learntechlab.com" 
-                className="hover:text-blue-700 transition-colors font-medium"
+                href="mailto:info@learntechlab.com"
+                className="text-blue-600 hover:text-blue-500 transition-colors"
               >
-                hello@learntechlab.com
+                info@learntechlab.com
               </a>
             </div>
           </div>

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/Header";
+import ConditionalHeader from "@/components/ConditionalHeader";
+import ConditionalMain from "@/components/ConditionalMain";
 import Footer from "@/components/Footer";
+import { AuthProvider } from "@/hooks/useAuth";
 
 export const metadata: Metadata = {
   title: "LearnTechLab - Master the Future of AI Development",
@@ -34,11 +36,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="antialiased bg-white text-gray-900 font-apple">
-        <Header />
-        <main className="pt-16">
-          {children}
-        </main>
-        <Footer />
+        <AuthProvider>
+          <ConditionalHeader />
+          <ConditionalMain>
+            {children}
+          </ConditionalMain>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

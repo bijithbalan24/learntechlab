@@ -13,7 +13,10 @@ import {
   Cloud,
   Bot,
   Cpu,
-  ChevronRight
+  ChevronRight,
+  GraduationCap,
+  UserCheck,
+  Settings
 } from "lucide-react"
 import Link from "next/link"
 import SlidingTiles from "@/components/SlidingTiles"
@@ -135,22 +138,6 @@ export default function HomePage() {
               Transform your career with cutting-edge AI tools. Learn through hands-on, project-based training where innovation meets accessibility.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Link 
-                href="/programs/ai-development" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 hover:scale-105"
-              >
-                Start Building
-              </Link>
-              <Link 
-                href="/programs" 
-                className="border border-white/30 hover:border-white/60 text-white hover:bg-white/10 px-8 py-4 rounded-full font-medium text-lg transition-all duration-300"
-              >
-                Learn more
-                <ChevronRight className="w-5 h-5 inline ml-2" />
-              </Link>
-            </div>
-
             <div className="text-sm text-gray-400 space-y-2">
               <p>Cutting-edge tools by Amazon Q Developer, Cursor, and Vercel</p>
               <div className="flex items-center justify-center space-x-8 text-xs">
@@ -176,7 +163,7 @@ export default function HomePage() {
               Master the tools that are shaping the future of development.
             </p>
           </div>
-
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: Bot, title: "Amazon Q Developer", desc: "Intelligent coding assistance", color: "orange" },
@@ -198,138 +185,6 @@ export default function HomePage() {
 
       {/* Apple-Style Sliding Tiles */}
       <SlidingTiles />
-
-      {/* Other Programs - Clean Card Layout */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">
-              More Programs
-            </h2>
-            <p className="text-xl text-gray-600 font-light">
-              Comprehensive training for every stage of your journey
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {programs.slice(1).map((program) => (
-              <div key={program.id} className="bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="p-8">
-                  <div className="text-sm font-medium text-purple-600 mb-3 tracking-wide uppercase">
-                    {program.category}
-                  </div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">{program.title}</h3>
-                  <p className="text-gray-600 font-light mb-6 leading-relaxed">{program.description}</p>
-                  
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center space-x-2">
-                      <Star className="w-4 h-4 text-yellow-500" />
-                      <span className="font-medium text-gray-900">{program.rating}</span>
-                    </div>
-                    <div className="text-2xl font-light text-gray-900">${program.price}</div>
-                  </div>
-                  
-                  <Link 
-                    href={`/programs/${program.id === 'cpmai' ? 'cpmai' : program.id === 'aws-cloud' ? 'aws' : 'networking'}`} 
-                    className="block w-full bg-gray-900 hover:bg-gray-800 text-white text-center py-3 rounded-full font-medium transition-all duration-300"
-                  >
-                    Learn more
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Success Metrics - Apple Stats Style */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">
-              Success That Speaks
-            </h2>
-            <p className="text-xl text-gray-600 font-light">
-              Our learners achieve remarkable career growth worldwide
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            {successMetrics.map((metric, index) => (
-              <div key={metric.label} className="text-center">
-                <div className="text-5xl font-light text-blue-600 mb-2">
-                  {metric.value}
-                </div>
-                <div className="text-lg font-medium text-gray-900 mb-1">{metric.label}</div>
-                <div className="text-sm text-gray-600 font-light">{metric.description}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Enterprise Solutions */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light mb-6">
-              For Enterprise
-            </h2>
-            <p className="text-xl text-gray-300 font-light max-w-3xl mx-auto">
-              Transform your entire organization with cutting-edge AI development training
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            {businessFeatures.map((feature) => (
-              <div key={feature.title} className="text-center">
-                <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <feature.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-400 font-light text-sm leading-relaxed">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link 
-              href="/business" 
-              className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 hover:scale-105"
-            >
-              Schedule Demo
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA - Apple-style */}
-      <section className="py-20 bg-black text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-6xl font-light mb-6 leading-tight">
-            Innovation is
-            <br />
-            <span className="text-blue-400">Accessible to All</span>
-          </h2>
-          <p className="text-xl font-light text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
-            Join our global community of learners mastering AI-driven development, cloud computing, and networking.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/programs" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 hover:scale-105"
-            >
-              Start Your Journey
-            </Link>
-            <Link 
-              href="/business" 
-              className="border border-white/30 hover:border-white/60 text-white hover:bg-white/10 px-8 py-4 rounded-full font-medium text-lg transition-all duration-300"
-            >
-              For Business
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }
