@@ -101,7 +101,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Encourage Continuous Exploration</h3>
-                  <p className="text-gray-600">Foster a "learn-as-you-go" culture that mirrors the evolving nature of modern tech landscapes and encourages lifelong learning.</p>
+                  <p className="text-gray-600">Foster a &ldquo;learn-as-you-go&rdquo; culture that mirrors the evolving nature of modern tech landscapes and encourages lifelong learning.</p>
                 </div>
               </div>
               
@@ -203,7 +203,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Training Future-Ready Professionals</h4>
-                    <p className="text-gray-600">We don't just teach tech—we train builders, innovators, and future-ready professionals for the evolving digital economy.</p>
+                    <p className="text-gray-600">We don&apos;t just teach tech—we train builders, innovators, and future-ready professionals for the evolving digital economy.</p>
                   </div>
                 </div>
               </div>
@@ -240,7 +240,7 @@ export default function AboutPage() {
               Our Flagship Course
             </h2>
             <p className="text-xl text-gray-600">
-              Experience our signature "Building Applications with AI" program
+              Experience our signature &ldquo;Building Applications with AI&rdquo; program
             </p>
           </div>
           

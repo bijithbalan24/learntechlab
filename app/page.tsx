@@ -1,6 +1,3 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { 
   BookOpen, 
   Users, 
@@ -401,7 +398,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {businessFeatures.map((feature, index) => (
+            {businessFeatures.map((feature) => (
               <div key={feature.title} className="text-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
                 <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <feature.icon className="w-6 h-6 text-orange-600" />
