@@ -41,7 +41,7 @@ export function ComingSoon({
 
         <div className="space-y-4">
           <p className="text-gray-600">
-            We're building something amazing for the <strong>LearnTechLab</strong> community. 
+            We&apos;re building something amazing for the <strong>LearnTechLab</strong> community. 
             This page will be updated soon with exciting new features and content.
           </p>
           

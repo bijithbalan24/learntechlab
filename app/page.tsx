@@ -4,28 +4,20 @@ import { Badge } from "@/components/ui/badge"
 import { 
   BookOpen, 
   Users, 
-  Award, 
   TrendingUp, 
   Star, 
   Clock, 
   Calendar,
-  CheckCircle,
   ArrowRight,
-  PlayCircle,
   Globe,
   Shield,
   Zap,
-  Building2,
   Code,
   Cloud,
   Bot,
-  Cpu,
-  Lightbulb,
-  Target,
-  Heart
+  Cpu
 } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 
 const programs = [
   {
@@ -101,36 +93,6 @@ const successMetrics = [
   { label: "Career Growth", value: "87%", description: "Received promotions within 6 months" },
   { label: "Salary Increase", value: "42%", description: "Average salary increase" },
   { label: "Job Placement", value: "91%", description: "Found new roles within 3 months" }
-]
-
-const testimonials = [
-  {
-    name: "Sarah Chen",
-    title: "Senior AI Engineer",
-    company: "Microsoft",
-    content: "The AI Development program transformed my career. The hands-on approach and industry partnerships gave me the practical skills I needed to excel in my role.",
-    rating: 5,
-    avatar: "/images/testimonials/sarah-chen.jpg",
-    program: "AI Development"
-  },
-  {
-    name: "Marcus Johnson",
-    title: "Cloud Solutions Architect",
-    company: "Amazon",
-    content: "learntechlab's AWS program was comprehensive and practical. The lab environments and expert instruction helped me achieve my certification and land my dream job.",
-    rating: 5,
-    avatar: "/images/testimonials/marcus-johnson.jpg",
-    program: "AWS Cloud Computing"
-  },
-  {
-    name: "Priya Patel",
-    title: "AI Project Manager",
-    company: "Google",
-    content: "The CPMAI certification from learntechlab gave me the credibility and skills to lead AI initiatives at scale. The program is industry-leading.",
-    rating: 5,
-    avatar: "/images/testimonials/priya-patel.jpg",
-    program: "CPMAI Certification"
-  }
 ]
 
 const businessFeatures = [
@@ -273,7 +235,7 @@ export default function HomePage() {
               Train <span className="text-purple-600">Builders & Innovators</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We don't just teach tech—we train builders, innovators, and future-ready professionals. 
+              We don&apos;t just teach tech—we train builders, innovators, and future-ready professionals. 
               From concept to deployed product using AI as your co-developer.
             </p>
           </div>
@@ -333,8 +295,8 @@ export default function HomePage() {
                     AI Development Tools:
                   </h4>
                   <div className="grid grid-cols-2 gap-3">
-                    {programs[0].tools.map((tool, index) => (
-                      <div key={index} className="flex items-center space-x-2 bg-gray-50 p-2 rounded-lg">
+                    {programs[0].tools.map((tool) => (
+                      <div key={tool} className="flex items-center space-x-2 bg-gray-50 p-2 rounded-lg">
                         <span className="text-sm text-gray-700">{tool}</span>
                       </div>
                     ))}
@@ -354,7 +316,7 @@ export default function HomePage() {
 
             {/* Other Programs Grid */}
             <div className="space-y-6">
-              {programs.slice(1, 3).map((program, index) => (
+              {programs.slice(1, 3).map((program) => (
                 <div key={program.id} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
                   <div className="flex items-center justify-between mb-4">
                     <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
@@ -411,7 +373,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-4 gap-8">
             {successMetrics.map((metric, index) => (
-              <div key={index} className="text-center bg-white p-6 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
+              <div key={metric.label} className="text-center bg-white p-6 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-shadow">
                 <div className={`text-4xl font-bold mb-2 ${index % 2 === 0 ? 'text-blue-600' : 'text-purple-600'}`}>
                   {metric.value}
                 </div>
@@ -440,7 +402,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {businessFeatures.map((feature, index) => (
-              <div key={index} className="text-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+              <div key={feature.title} className="text-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
                 <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <feature.icon className="w-6 h-6 text-orange-600" />
                 </div>
